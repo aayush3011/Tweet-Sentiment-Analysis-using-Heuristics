@@ -1,0 +1,102 @@
+											
+
+											...........................................
+											   Determine the sentiment of each tweet
+											...........................................
+
+
+	This gives the sentiment score for each tweet in streaming_output_full.txt file
+	First function returns a dictonary of the sentiment scores of the terms with thier respecitve sentiment scores.
+	The second function calculates the sentiment scores for each tweet.
+	It loads the json tweet text and split the terms in a list.
+	If the term is in the sent dictionary, we take the sent score from there and add it, if the term is not in the dicitonary we Add a 0 to the total sent score of the tweet.
+	Then we add the score of each tweet in a dictionary as a value of that particular tweet.
+	The first print function prints the top 10 highest sentiment score tweets.
+	The second print function prints the top 10 lowest sentiment score tweets.
+
+	Solution:
+	 The top 10 highest sentiment tweets:
+	 14.0000: RT @StephenCurry30: Happy birthday to my beautiful Wife! I mean, how lucky am I? Enjoy your day shawty. Love youuuuuuuu #Focuse... https://…
+	 12.0000: Happy Wed evening, all! I hope you had a nice day! Have a wonderful evening! https://t.co/X2kZDKdSCd
+	 12.0000: @aaroncarter think your lovely to your fans I love it x I wish I could come see you in America and meet you 😇💫 huge dream of mine love I X
+	 12.0000: Good luck to @Mo_Farah @Cardiff2016 welcome to our wonderful Capital City of Wales from the pupils of NantyParc Primary School #inspiration
+	 12.0000: RT @JonathanALever: Congrats to an amazing DPP team. U should be proud of today's historic announcement for ur work w/ amazing local Ys. ht…
+	 11.0000: Woo Hoo! I won A $25 Visa GC from https://t.co/48ggTPExVQ! Thanks so much @EightyMPHMom! Check out their great giveaways!
+	 11.0000: RT @ArianaGrande: happy #NationalPuppyDay! let them do whatever they want and love them, hug them, kiss them, squeeze them til they pop. ev…
+	 10.0000: @camilacabello97 Can you wish me good lucky for my tests? I'm not feeling confident 😔 Brazil loves you, princess 💜
+	 10.0000: RT @Ukrainerabbi: Happy Purim2Jews&amp;freedom loving ppl  theworldover Celebrate freedom of tyranny xenophobia&amp;antiSemitism Slava Ukraina http…
+	 10.0000: Thanks for being u. I love u with all my heart U r my hero "U light up my world like nobody else"  Please can u follow me? @Harry_Styles  -💞
+	
+	 The top 10 lowest sentiment tweets:
+	-18.0000: RT @UpperCutDemHoes: Lurk lurk lurk lurk.. All you bitches lurk lurk lurk lurk lurk.. Trynna find some dirt dirt dirt dirt.. Get ya feeling…
+	-14.0000: RT @Viccent0022: yesterday: tired  today: tired  tomorrow: tired  next week: tired  next month: tired  next year: tired  next life: tired
+	-14.0000: RT @girlposts: I have 3 types of mad: 1)when I'm so mad I just cry 2)when I'm mad as fuck and just snap 3)when I'm mad and don't wanna talk…
+	-14.0000: You know you don't give a fuck no more when you stop lurking &amp; getting mad at shit .
+	-12.0000: RT @tomhardyon: Coraline summary:  Let's sew buttons in to our eyes cause fuck you I hate my parents I'm a sad girl Fuck clowns I wish I wa…
+	-12.0000: Still pissed about yesterday and I'll continue to still be pissed till shit is changed
+	-12.0000: I hate wasting my time on lame niggas 😩😩😒
+	-12.0000: RT @FactsOfSchool: graduation speech:  *Points to person*: Fuck you *Points to person*: Fuck you *Points to crush*: Fuck me *Points to pers…
+	-12.0000: RT @eastcoasthoe: Him: yo you're deadass so damn childish Me: *mocks him* yo you're deadass so damn childish https://t.co/G8K8Euna9y
+	-11.0000: I FUCKING HATE LAURIER BRO SOMEONE ACTUALLY TOOK A SHIT ON THE GROUND 😭😭😭 https://t.co/iQYxeTeuly
+											
+
+												..................................
+												   Happiest Breaking Bad Actor:
+												..................................
+	
+
+	This gives the average sentiment score for all tweets by a particular breaking bad actor.
+	First function returns a dictonary of the sentiment scores of the terms with thier respecitve sentiment scores.
+	Second function returns a dcitionary with the name of the breaking bad actor as the key and the value containing a list of the tweets by that actor.
+	Third function calculates the average sentimaent score of the tweets of the actors.
+	It returns a dictionary with name name of the actor as the key and thier average sentiment score of the tweets as the value for the dictionary.
+	The print function prints the dictionary as "score:username" in descending order.
+
+	Solution:
+
+	 1.8100: mrbobodenkirk
+	 1.7143: Krystenritter
+	 1.6970: quiethandfilms
+	 1.4742: RjMitte
+	 1.4086: aaronpaul_8
+	 1.3093: DanielMoncada80
+	 1.2626: CharlesEbaker
+	 1.1600: deanjnorris
+	 1.1500: betsy_brandt
+	 1.0722: LuisMoncada77
+	 1.0300: BryanCranston
+	 0.1562: mattjonesisdead
+
+
+															.....................
+															   Happiest State:
+															.....................
+	
+
+	This gives the happiest states of US by calculating the sentiment scores form tweets of different US states.
+	First function returns a dictonary of the sentiment scores of the terms with thier respecitve sentiment scores.
+	Second function creates a dictionary of the US states names and their abbreviations.
+	Third function returns a dcitionary with the abbreviation of the state name as the key and the value containing a list of the tweets from that particular state.
+	We check the placetype in place attribute of the json twitter object, if it's value is city then the fullname in place attribute would be of the form "city,state name abbreviation" and we take the abbeviatoin from it.
+	If it's value is admin then it is of the form "state name, US" and in this situation we take up the state name and check in in the diciotnary returned by the second function and find the abbreivation of that state name and add to the dicitonary of the third function.
+	Fourth function calculates the average sentimaent score of the tweets from different states.
+	It returns a dictionary with abbreviation of the state name as the key and their average sentiment score of the tweets as the value for the dictionary.
+	The first print function prints the 5 happiest states from the dictionary as "score:state name abbreviation" in descending order.
+	The second print function prints the 5 unhappiest states from the dictionary as "score:state name abbreviation" in descending order.
+
+	Solution:
+	Top 5 happiest states:
+	3.0000: HI
+	2.0000: IA
+	1.1765: CA
+	1.0000: NV
+	0.7143: NY
+
+	Top 5 unhappiest states:
+	-4.0000: LA
+	-4.0000: AK
+	-3.0000: MO
+	-1.0000: CT
+	-1.0000: NC
+
+

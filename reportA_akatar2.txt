@@ -1,0 +1,89 @@
+
+
+											.................................................
+											   Twitter Sentiment Analysis using Heuristics
+															Report - A
+													      
+											.................................................
+
+
+														....................
+														   Streaming API:
+														....................   
+
+
+   Streaming_output_full.txt contains the tweet fetched from twitter api.
+
+
+														.................
+														   Search API:
+														.................   
+
+
+	Searched term - nbaallstar
+	search_output.txt contains the searched term "nbaallatar" in the tweets.
+
+
+														...............
+														   User API:
+														...............
+
+
+	It takes the usernames form the usernames.txt file in a list.
+	Then it makes a dictionary of the usernames and their tweets.
+	Then I check that if the tweets response status is 200 then check the tweet. Because only if the status is 200 then the https server request has been completed.
+	Then the tweet dictionary is wroted on the csv file.
+
+	Solution:
+	nbaallstar
+	tweet1 - RT @RootsCanada: @ethanisblank @NBAAllStar sorry! It was an exclusive piece for the NBA, if you have one keep it safe, there are only a few\\u2026
+	tweet2 - @ethanisblank @NBAAllStar sorry! It was an exclusive piece for the NBA, if you have one keep it safe, there are only a few out there!
+	tweet3 -  @VeganYogaDude: RT@LeBronJames Which Slam Dunk Contest was the best\\u2049\\ufe0f #NBAAllStar #DunkContest \\ud83c\\udfc6 https:\\/\\/t.co\\/poYVGZL7kH #sports #music
+
+
+														........................
+														   Compute Frequency:
+														........................
+
+
+	This calculates the frequency of terms excluding the words in the stopwords file,of the tweets text.
+	The first function returns a lits of the terms in stopwords file.  
+	In the second function we create a dictionary to count all the terms and their respective frequencies.
+	Frequency for a particular term is calculates as : [number of occurences of the term in all tweets/number of occurences of all terms in all tweets].
+	So we read each tweet form the streaming_output_full.txt file and then store the terms in the text in a list by using the split function on space. Only those terms which are not in stopwrods fiel are considered.
+	I calculated the total terms in all tweets by getting the length of the list containing the terms of the tweet text.
+	Then the count of every term is done and stored in the dictionary after dividing it with the total terms in all tweets.
+	The print fucniton then prints the dictionary as "term frequency".
+
+	Solution:
+	Top 30 term frequencies
+	rt	 	 0.05307123076224633
+	-	 	 0.005584055931356971
+	get	 	 0.00501657057247923
+	i'm	 	 0.0046533799427974755
+	&amp;	 0.004562582285377037
+	like	 0.004494484042311708
+	love	 0.003700004539882871
+	new	 	 0.0030417215235846915
+	don't	 0.003019022109229582
+	u	 	 0.0029736232805193624
+	one	 	 0.002950923866164253
+	it's	 0.0028601262087438145
+	weather	 0.002746629136968266
+	people	 0.0025877332364824986
+	good	 0.0022926408498660737
+	see	 	 0.002088346120670087
+	day	 	 0.0020429472919598676
+	want	 0.0019521496345394288
+	go	 	 0.0019521496345394288
+	know	 0.0019294502201843192
+	need	 0.0019067508058292096
+	got	 	 0.0018386525627638807
+	make	 0.0017932537340536615
+	you're	 0.0017478549053434422
+	time	 0.0017478549053434422
+	happy	 0.0017478549053434422
+	never	 0.001702456076633223
+	us	 	 0.0016116584192127842
+	back	 0.0015889590048576746
+	life	 0.0015208607617923457
